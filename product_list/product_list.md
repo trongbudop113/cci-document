@@ -16,15 +16,18 @@
     - `margin` khoảng cách bên ngoài viền của 1 phần tử
     - `padding` khoảng cách bên trong viền
     - `line-height` khoảng cách giữa các dòng chữ
-    - `` khoảng cách giữa các component
+    - `gap` khoảng cách giữa các component
     - `border-radius` bo viền 
     - `font-size` kích thước chữ
     - `font-weight` cỡ chữ
     
-## Loại Sản Phẩm
-- Thông tin bổ ích
-- Banner quảng cáo
-- 
+## Loại Item hiển thị
+- Thông tin bổ ích (xen kẽ)
+- Banner quảng cáo dạng slide (xen kẽ)
+- Sản phẩm
+  - Sản phẩm thường
+  - Sản phẩm kèm quà tặng
+  - Sản phẩm digital
 
 ## Thành Phần Mỗi Product Item
 - Khoảnh cách và kích thước:
@@ -32,12 +35,12 @@
   - padding: `6px`
   - font-size: `13sp` cho title, `12sp` cho oldPrice, `16sp` cho currentPrice
   - line-height: `16 / 13`
-  - Khoảng cách từ ảnh sản phẩm tới title: `6px`
-  - Khoảng cách từ title tới cụm đánh giá: `12px`
-  - Khoảng cách từ cụm đánh giá tới cụm price: `12px`
+  - gap từ ảnh sản phẩm tới title: `6px`
+  - gap từ title tới cụm đánh giá: `12px`
+  - gap từ cụm đánh giá tới cụm price: `12px`
 - Media: ảnh hoặc video khung 1:1
 - Label: “FREESHIP”, “siêu tốc 1h”.
-- Frame: Khung chương trình
+- Frame: Khung chương trình khuyến mãi
 - Tiêu đề: tối đa 2 dòng, hiển thị ... khi tiêu dề dài vượt quá 
 (ellipsis).
 - Thông tin phụ: brand/cửa hàng/khoảng cách giao, tối đa 1 dòng.
@@ -48,7 +51,7 @@
 - Đánh giá & đã bán:
   - Đánh giá từ 1 - 5 sao
   - “Đã bán x” rút gọn: `1.2k`, `2.4k+`
-- Badge count nằm góc phải trên cùng nút `Thêm vào giỏ`:
+- Badge count hiển thị khi có sản phẩm thêm vào giỏ hàng và nằm góc phải trên cùng nút `Thêm vào giỏ`:
   - font-size: `11sp`
   - background màu `#FF6400`
   - border-radius `10px`
