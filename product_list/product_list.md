@@ -55,6 +55,7 @@
   - font-size: `11sp`
   - background màu `#FF6400`
   - border-radius `10px`
+- Background khuyến mãi đơn hàng
 - Hành động : Thêm vào giỏ.
 
 ## Xử Lý Ảnh Sản Phẩm
