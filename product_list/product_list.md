@@ -5,7 +5,7 @@
 - Định nghĩa rõ loại item, thuật ngữ layout, quy tắc hiển thị ảnh/video, hiệu ứng và cấu trúc dữ liệu để dựng UI/logic nhất quán cho các block danh sách sản phẩm liên quan.
 
 ## Phạm Vi Áp Dụng
-- Màn hình danh sách sản phẩm dạng lưới 2 cột; có thể xen kẽ banner toàn chiều ngang và thẻ nội dung (editorial/review).
+- Màn hình danh sách sản phẩm dạng lưới 2 cột; có thể xen kẽ banner slider và mục thông tin bổ ích.
 - Nền tảng: Web và App.
 
 ## Thuật Ngữ Về Khoảng Cách, Kích Thước
@@ -30,33 +30,41 @@
   - Sản phẩm digital
 
 ## Thành Phần Mỗi Product Item
-- Khoảnh cách và kích thước:
-  - margin: `5px`
-  - padding: `6px`
-  - font-size: `13sp` cho title, `12sp` cho oldPrice, `16sp` cho currentPrice
-  - line-height: `16 / 13`
-  - gap từ ảnh sản phẩm tới title: `6px`
-  - gap từ title tới cụm đánh giá: `12px`
-  - gap từ cụm đánh giá tới cụm price: `12px`
-- Media: ảnh hoặc video khung 1:1
-- Label: “FREESHIP”, “siêu tốc 1h”.
-- Frame: Khung chương trình khuyến mãi
-- Tiêu đề: tối đa 2 dòng, hiển thị ... khi tiêu dề dài vượt quá 
-(ellipsis).
-- Thông tin phụ: brand/cửa hàng/khoảng cách giao, tối đa 1 dòng.
-- Giá:
-  - `oldPrice` tùy chọn (strikethrough)
-  - `discountPercent`/`discountValue` nếu có
-  - `currentPrice` luôn có
-- Đánh giá & đã bán:
-  - Đánh giá từ 1 - 5 sao
-  - “Đã bán x” rút gọn: `1.2k`, `2.4k+`
-- Badge count hiển thị khi có sản phẩm thêm vào giỏ hàng và nằm góc phải trên cùng nút `Thêm vào giỏ`:
-  - font-size: `11sp`
-  - background màu `#FF6400`
-  - border-radius `10px`
-- Background khuyến mãi đơn hàng
-- Hành động : Thêm vào giỏ.
+- Banner dạng quảng cáo (//Todo: Trân xem xét nên mô tả mục này ko?)
+  - Vị trí hiển thị
+  - Xử lý hiển thị hình ảnh (//Todo: Anh Hòa, Thanh iOS), full item, tỉ lệ 177 x 288
+  - Dạng slide chuyển từ trái sang phải
+- Thông tin bổ ích (//Todo: Trân xem xét nên mô tả mục này ko?)
+  - Vị trí hiển thị
+  - Dạng slide chuyển từ trái sang phải
+- Sản phẩm
+  - Khoảnh cách và kích thước:
+    - margin: `5px`
+    - padding: `6px`
+    - font-size: `13sp` cho title, `12sp` cho oldPrice, `16sp` cho currentPrice
+    - line-height: `16 / 13`
+    - gap từ ảnh sản phẩm tới title: `6px`
+    - gap từ title tới cụm đánh giá: `12px`
+    - gap từ cụm đánh giá tới cụm price: `12px`
+  - Media: ảnh hoặc video khung 1:1
+  - Label: “FREESHIP”, “siêu tốc 1h”.
+  - Frame: Khung chương trình khuyến mãi
+  - Tiêu đề: tối đa 2 dòng, hiển thị ... khi tiêu dề dài vượt quá 
+  (ellipsis).
+  - Thông tin phụ: brand/cửa hàng/khoảng cách giao, tối đa 1 dòng.
+  - Giá:
+    - `oldPrice` tùy chọn (strikethrough)
+    - `discountPercent`/`discountValue` nếu có
+    - `currentPrice` luôn có
+  - Đánh giá & đã bán:
+    - Đánh giá từ 1 - 5 sao
+    - “Đã bán x” rút gọn: `1.2k`, `2.4k+`
+  - Badge count hiển thị khi có sản phẩm thêm vào giỏ hàng và nằm góc phải trên cùng nút `Thêm vào giỏ`:
+    - font-size: `11sp`
+    - background màu `#FF6400`
+    - border-radius `10px`
+  - Background khuyến mãi đơn hàng
+  - Hành động : Thêm vào giỏ, xem chi tiết.
 
 ## Xử Lý Ảnh Sản Phẩm
 - Khung media: tỉ lệ là 1:1.
@@ -70,7 +78,7 @@
   - Prefetch khi item sắp vào viewport
   - Caching theo `id/url` + kích thước khung
 
-## Xử Lý Video (nếu có)
+## Xử Lý Video
 - Poster: thumbnail tĩnh trong khung 1:1; overlay icon play ở giữa.
 - Auto‑play: tắt trong danh sách; chỉ phát khi người dùng nhấn.
 - Khi phát inline:
@@ -93,3 +101,7 @@
   - Có `discountPercent`: chip “‑x%”
   - Có `currentPrice`: “x₫”
 - Đã bán: `>=1.000` → `1.0k`, `>=1.000.000` → `1.0M`.
+- Đánh giá:
+  - Từ 1 - 5 sao
+  - 1, 2, 3, 4, 5 hiển thị số ngôi sao nguyên
+  - số thập phân hiển thị số sao nguyên + 1 ngôi sao nửa (vd: 4.3 hiển thị 4 ngôi sao + 1 ngôi sao nửa)
