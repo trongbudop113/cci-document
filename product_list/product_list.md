@@ -26,6 +26,7 @@
     - `font-size` kích thước chữ
     - `font-weight` độ đậm chữ
     - `max-line` số dòng tối đa hiển thị
+    
       ![](/images/image_item.jpeg)
 &nbsp; <img src="https://github.com/trongbudop113/cci-document/blob/main/product_list/images/image_item.jpeg"  width="324" height="576">
     
